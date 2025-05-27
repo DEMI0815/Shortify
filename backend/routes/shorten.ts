@@ -1,17 +1,21 @@
 import ShortUrl from '../models/ShortUrl.js';
 import { nanoid } from 'nanoid';
-import express from 'express';
+import { Router, Request, Response } from 'express';
 
-const router = express.Router();
+const router = Router();
 
 // 生成短链
-router.post('/shorten', async (req, res) => {
-  const { originalUrl } = req.body;
-  if (!originalUrl) return res.status(400).json({ error: '缺少原始链接' });
+router.post('/shorten', (req: Request, res: Response) => {
+  (async () => {
+    const { originalUrl } = req.body;
+    if (!originalUrl) return res.status(400).json({ error: '缺少原始链接' });
 
-  const shortId = nanoid(6);
-  const shortUrl = await ShortUrl.create({ shortId, originalUrl });
-  res.json({ shortId, originalUrl });
+    const shortId = nanoid(6);
+    await ShortUrl.create({ shortId, originalUrl });
+    res.json({ shortId, originalUrl });
+  })().catch(err => {
+    res.status(500).json({ error: err.message });
+  });
 });
 
 // 跳转短链

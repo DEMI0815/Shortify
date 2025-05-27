@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "backend:dev": "node --loader ts-node/esm backend/app.ts"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/express": "^5.0.2",
     "@types/jest": "^29.5.14",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^22.15.21",
     "@types/supertest": "^6.0.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "private": true
