@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "backend:dev": "node --loader ts-node/esm backend/app.ts"
+    "backend:dev": "node --loader ts-node/esm backend/app.ts",
+    "backend:test": "jest"
   },
   "devDependencies": {
     "@types/express": "^5.0.2",
