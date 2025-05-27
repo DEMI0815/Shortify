@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectDB, ShortUrl } from '../db';
 
-export async function GET(req: NextRequest, { params }: { params: { shortId: string } }) {
+interface IShortRequest {
+  params: any
+}
+
+export async function GET(req: NextRequest, { params }: IShortRequest) {
   await connectDB();
   const { shortId } = params;
   const shortUrl = await ShortUrl.findOne({ shortId });

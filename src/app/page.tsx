@@ -21,6 +21,7 @@ export default function Home() {
       setShortId(res.data.shortId);
       toast.success('短链生成成功！');
     } catch (e) {
+      console.error(e);
       toast.error('生成失败');
     }
     setLoading(false);
