@@ -1,22 +1,32 @@
 {
-  "name": "Shortify",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "type": "module",
+  "name": "shortify",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "tsc",
-    "backend:dev": "node --loader ts-node/esm backend/app.ts",
-    "backend:test": "jest"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "mongoose": "^8.15.1",
+    "next": "15.3.2",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2"
   },
   "devDependencies": {
-    "@types/express": "^5.0.2",
-    "@types/jest": "^29.5.14",
-    "@types/mongoose": "^5.11.97",
-    "@types/node": "^22.15.21",
-    "@types/supertest": "^6.0.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  },
-  "private": true
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/qrcode.react": "^1.0.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
