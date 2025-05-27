@@ -27,7 +27,7 @@ export default function Home() {
     setLoading(false);
   };
 
-  const shortUrl = shortId ? `http://localhost:3000/api/${shortId}` : '';
+  const shortUrl = shortId ? `${process.env.NEXT_PUBLIC_API_URL}/api/${shortId}` : '';
 
   return (
     <div style={{ maxWidth: 480, margin: '60px auto', padding: 24, border: '1px solid #eee', borderRadius: 8 }}>
@@ -46,7 +46,7 @@ export default function Home() {
         <div style={{ marginTop: 32, textAlign: 'center' }}>
           <div>
             <span>短链：</span>
-            <a href={shortUrl} target="_blank" rel="noopener noreferrer">{shortUrl}</a>
+            <a href={shortUrl} target="_blank" rel="noopener noreferrer">{shortId}</a>
           </div>
           <div style={{ marginTop: 16 }}>
             <QRCodeSVG value={shortUrl} size={160} />
