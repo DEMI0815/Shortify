@@ -17,7 +17,7 @@ export default function Home() {
     }
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:3001/api/shorten', { originalUrl: url });
+      const res = await axios.post('/api/shorten', { originalUrl: url });
       setShortId(res.data.shortId);
       toast.success('短链生成成功！');
     } catch (e) {
@@ -26,7 +26,7 @@ export default function Home() {
     setLoading(false);
   };
 
-  const shortUrl = shortId ? `http://localhost:3001/api/${shortId}` : '';
+  const shortUrl = shortId ? `http://localhost:3000/api/${shortId}` : '';
 
   return (
     <div style={{ maxWidth: 480, margin: '60px auto', padding: 24, border: '1px solid #eee', borderRadius: 8 }}>
