@@ -36,7 +36,11 @@ const Header: React.FC = () => {
             </header>
 
             {isEmailDialogOpen && (
-                <div className="fixed inset-0 bg-gray-600 opacity-50 overflow-y-auto h-full w-full flex justify-center items-center z-50">
+                <div
+                    className="fixed inset-0 overflow-y-auto h-full w-full flex justify-center items-center z-50"
+                    style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                    }}>
                     <div className="bg-white p-6 rounded-lg shadow-xl relative">
                         <h3 className="text-lg font-bold mb-4">我的邮箱</h3>
                         <p className="mb-6">yidi.zhao@thoughtworks.com</p>
@@ -44,8 +48,10 @@ const Header: React.FC = () => {
                             className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                             onClick={closeEmailDialog}
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                      d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
                     </div>
