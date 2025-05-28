@@ -1,6 +1,5 @@
 import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import toast from 'react-hot-toast';
 
 interface QrCodeGeneratorProps {
     qrCodeUrl: string;
@@ -11,16 +10,6 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({
                                                              qrCodeUrl,
                                                              setQrCodeUrl,
                                                          }) => {
-
-    const handleGenerateQrCode = () => {
-        if (!qrCodeUrl) {
-            toast.error('请输入要生成二维码的链接');
-            return;
-        }
-        // 二维码直接使用输入的 URL
-        // QRCodeSVG 组件可以直接使用 qrCodeUrl
-    };
-
     return (
         <div>
             <label htmlFor="qrCodeUrl" className="block text-sm font-medium text-gray-700 mb-2">Enter your
@@ -38,7 +27,6 @@ const QrCodeGenerator: React.FC<QrCodeGeneratorProps> = ({
                 <div className="mt-8 text-center">
                     <div className="mt-4">
                         <QRCodeSVG value={qrCodeUrl} size={160}/>
-                        <div className="mt-2 text-gray-500 text-sm">扫码访问</div>
                     </div>
                 </div>
             )}

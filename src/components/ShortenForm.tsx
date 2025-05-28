@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { QRCodeSVG } from 'qrcode.react';
 
 interface ShortenFormProps {
     url: string;
