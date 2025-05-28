@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-gray-100">
             <Header/>
-            <div className="max-w-md mx-auto mt-16 p-6 border border-gray-200 rounded-lg shadow-md bg-white">
+            <div className="max-w-2xl mx-auto mt-16 p-6 border border-gray-200 rounded-lg shadow-md bg-white">
                 <Toaster/>
                 <h2 className="text-2xl font-bold mb-4">Quick create</h2>
                 <div className="flex mb-6 border-b border-gray-200">
